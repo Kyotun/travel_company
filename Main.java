@@ -164,6 +164,20 @@ public class Main {
                 } else {
                     System.out.println(travel_packets.get(index));
                 }
+            } else if (option == 10) {
+                System.out.println("Please enter the packet id: ");
+                String pktid = sc.nextLine();
+                TravelPacket travel_packet = new TravelPacket(pktid);
+
+                if (travel_packets.contains(travel_packet)) {
+                    int index = travel_packets.indexOf(travel_packet);
+                    TravelPacket travel_packet2 = travel_packets.get(index);
+                    System.out.println("Please enter the new price: ");
+                    float price = sc.nextFloat();
+                    travel_packet2.setPrice(price);
+                    System.out.println("Price is changed.");
+                }
+
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
