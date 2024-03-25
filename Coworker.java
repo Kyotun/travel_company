@@ -16,6 +16,12 @@ public class Coworker extends Person{
         return getUsernumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
     }
 
+    @Override
+    public boolean equals(Object obj){
+        Coworker coworker = (Coworker) obj;
+        return getID().equals(coworker.getID()) && getUsernumber().equals(coworker.getUsernumber());
+    }
+
     //Constructors
     public Coworker(String ID){
         super(ID);
