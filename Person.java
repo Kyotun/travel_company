@@ -28,7 +28,7 @@ public class Person {
     }
 
     public void setID(String ID) {
-        this.ID = ID;
+        if(idController(ID)){this.ID = ID;}
     }
 
     public void setAlter(int age){
