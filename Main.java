@@ -103,7 +103,23 @@ public class Main {
                     System.out.println(customer);
                 }
                 System.out.println("There is no person left to show.");
-            } 
+
+            } else if (option == 6) {
+                System.out.println("Please enter the id: ");
+                String bg = sc.nextLine();
+                System.out.println("Please enter the customer number: ");
+                String kn = sc.nextLine();
+
+                Customer customer = new Customer(bg, kn);
+
+                int index = customers.indexOf(customer);
+
+                if (index == -1) {
+                    System.out.println("Person could not be found.");
+                } else {
+                    System.out.println(customers.get(index));
+                }
+            }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
             sc.nextLine();
