@@ -21,6 +21,21 @@ public class Customer extends Person {
         System.out.println("Age: " + getAge());
     }
 
+    // Overrides
+    @Override
+    public String toString() {
+        return getCustomerNumber() + ": " + getID() + ", " + getName() + ", " + getSurname();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Customer) {
+            Customer customer = (Customer) obj;
+            return getID().equals(customer.getID()) && getCustomerNumber().equals(customer.getCustomerNumber());
+        }
+        return false;
+    }
+
     //Constructors
     public Customer(String ID) {
         super(ID);
@@ -37,21 +52,6 @@ public class Customer extends Person {
 
     public Customer(String ID, String name, String surname, String customer_number) {
         super(ID, name, surname);
-        this.customer_number = customer_number;
-    }
-
-    // Overrides
-    @Override
-    public String toString() {
-        return getCustomerNumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (obj instanceof Customer) {
-            Customer customer = (Customer) obj;
-            return getID().equals(customer.getID()) && getCustomerNumber().equals(customer.getCustomerNumber());
-        }
-        return false;
+        this.customer_number = "K" + customer_number;
     }
 }
