@@ -19,7 +19,7 @@ public abstract class Person {
         }
     }
     public void setID(String ID) {
-        if(idController(ID)){
+        if(checkID(ID)){
             this.ID = ID;
         } else{
             throw new BadIDFormatException("ID cannot start with '0' and should contain 11 number.");
@@ -65,7 +65,7 @@ public abstract class Person {
     // Class methods
     public static void printData(Person p){System.out.println(p.getID() + ", " + p.getName() + ", " + p.getSurname());}
     public static void printSize(ArrayList<? extends Person> list){System.out.println(list.size());}
-    public static boolean idController(String id){
+    public static boolean checkID(String id){
         return id.charAt(0) != '0' && Character.isDigit(id.charAt(0)) && Character.isDigit(id.charAt(1)) && Character.isDigit(id.charAt(2)) && Character.isDigit(id.charAt(3))
                 && Character.isDigit(id.charAt(4)) && Character.isDigit(id.charAt(5)) && Character.isDigit(id.charAt(6)) && Character.isDigit(id.charAt(7)) &&
                 Character.isDigit(id.charAt(8)) && Character.isDigit(id.charAt(9)) && Character.isDigit(id.charAt(10));
