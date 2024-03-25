@@ -26,24 +26,28 @@ public class Person {
                 if ( p == ' ' || p == '.' || (p <= 90 && p >= 65) || (p <= 122 && p >= 97) ){
                     continue;
                 } else {
-                    System.out.println("Name can contain just whitespace and letters.");
+                    System.out.println("Please give just whitespaces and letters.");
                     return false;
                 }
             }
             return true;
         } else{
-            System.out.println("Name should be longer than 2 characters.");
+            System.out.println("Entry should be longer than 2 characters.");
             return false;
         }
     }
 
     //Set Methods
     public void setName(String name){
-        this.name = name;
+        if(nameController(name)){
+            this.name = name;
+        }
     }
 
     public void setSurname(String surname){
-        this.surname = surname;
+        if(nameController(name)){
+            this.surname = surname;
+        }
     }
 
     public void setID(String ID) {
