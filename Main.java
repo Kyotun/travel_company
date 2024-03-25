@@ -60,6 +60,22 @@ public class Main {
                     System.out.println(coworker);
                 }
                 System.out.println("There is no person left to show.");
+            } else if (option == 3) {
+                System.out.println("Please give the id: ");
+                String bg = sc.nextLine();
+                System.out.println("Please give the coworker number: ");
+                String mn = sc.nextLine();
+
+                Coworker cw = new Coworker(bg, mn);
+
+                int index = coworkers.indexOf(cw);
+
+                if (index == -1) {
+                    System.out.println("Coworker could not be found.");
+                } else {
+                    System.out.println(coworkers.get(index));
+                }
+
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
