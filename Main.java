@@ -36,7 +36,7 @@ public class Main {
             option = sc.nextInt(); sc.nextLine();
 
             if (option == 1) {
-                System.out.println("Please enter the ID: ");
+                System.out.println("Please enter the personal ID: ");
                 String id = sc.nextLine();
 
                 if (Person.isIDValid(id)) {
@@ -62,12 +62,12 @@ public class Main {
                 System.out.println("There is no person left to show.");
 
             } else if (option == 3) {
-                System.out.println("Please enter the id: ");
-                String bg = sc.nextLine();
+                System.out.println("Please enter the personal ID: ");
+                String id = sc.nextLine();
                 System.out.println("Please enter the coworker number: ");
-                String mn = sc.nextLine();
+                String cn = sc.nextLine();
 
-                Coworker cw = new Coworker(bg, mn);
+                Coworker cw = new Coworker(id, cn);
 
                 int index = coworkers.indexOf(cw);
 
@@ -78,7 +78,7 @@ public class Main {
                 }
 
             } else if (option == 4) {
-                System.out.println("Please enter the id: ");
+                System.out.println("Please enter the personal ID: ");
                 String id = sc.nextLine();
 
                 if (Person.isIDValid(id)) {
@@ -105,12 +105,12 @@ public class Main {
                 System.out.println("There is no person left to show.");
 
             } else if (option == 6) {
-                System.out.println("Please enter the id: ");
-                String bg = sc.nextLine();
+                System.out.println("Please enter the personal ID: ");
+                String id = sc.nextLine();
                 System.out.println("Please enter the customer number: ");
                 String kn = sc.nextLine();
 
-                Customer customer = new Customer(bg, kn);
+                Customer customer = new Customer(id, kn);
 
                 int index = customers.indexOf(customer);
 
@@ -152,7 +152,7 @@ public class Main {
                 System.out.println("There is no packet left to show.");
 
             } else if (option == 9) {
-                System.out.println("Please enter the id: ");
+                System.out.println("Please enter the packet ID: ");
                 String pktid = sc.nextLine();
 
                 TravelPacket travel_packet = new TravelPacket(pktid);
@@ -165,7 +165,7 @@ public class Main {
                     System.out.println(travel_packets.get(index));
                 }
             } else if (option == 10) {
-                System.out.println("Please enter the packet id: ");
+                System.out.println("Please enter the packet ID: ");
                 String pktid = sc.nextLine();
                 TravelPacket travel_packet = new TravelPacket(pktid);
 
@@ -179,7 +179,7 @@ public class Main {
                 }
 
             } else if (option == 11) {
-                System.out.println("Please enter the personal id: ");
+                System.out.println("Please enter the personal ID: ");
                 String id = sc.nextLine();
                 System.out.println("Please enter the coworker number: ");
                 String wn = sc.nextLine();
@@ -193,6 +193,30 @@ public class Main {
                     coworker2.setSurname(nn);
                 } else {
                     System.out.println("Coworker could not be found.");
+                }
+            } else if (option == 12){
+                System.out.println("Please enter the personal ID of customer: ");
+                String id = sc.nextLine();
+
+                System.out.println("Please enter the customer number of customer: ");
+                String cn = sc.nextLine();
+
+                System.out.println("Please enter the packet ID to add customers list: ");
+                String pktid = sc.nextLine();
+
+                int index = customers.indexOf(new Customer(id, cn));
+
+                if(index >= 0){
+                    Customer temp_k = customers.get(index);
+                    index = travel_packets.indexOf(new TravelPacket((pktid)));
+                    if (index >= 0){
+                        TravelPacket tp = travel_packets.get(index);
+                        temp_k.addPacket(tp);
+                    } else {
+                        System.out.println("Travel packet could not be found.");
+                    }
+                } else {
+                    System.out.println("Customer could not be found.");
                 }
             }
         } catch (InputMismatchException ime) {
