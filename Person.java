@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 public abstract class Person {
+    // Object attributes
     private String name = "";
     private String surname = "";
     private String ID = "";
     private int age = 0;
+    private  boolean authorisation;
 
     // Void Methods
     public void printInfo(){
@@ -55,13 +57,11 @@ public abstract class Person {
             this.name = name;
         }
     }
-
     public void setSurname(String surname){
         if(nameController(name)){
             this.surname = surname;
         }
     }
-
     public void setID(String ID) {
         if(idController(ID)){
             this.ID = ID;
@@ -69,11 +69,8 @@ public abstract class Person {
             throw new BadIDFormatException("ID cannot start with '0' and should contain 11 number.");
         }
     }
-
-    public void setAge(int age){
-        this.age = age;
-    }
-
+    public void setAge(int age){this.age = age;}
+    public void setAuthorisation(boolean authorisation){this.authorisation = authorisation;}
     public void setPersonData(String ID, String name, String surname, int age){
         this.ID = ID;
         this.name = name;
@@ -81,35 +78,21 @@ public abstract class Person {
         this.age = age;
     }
 
-
     //Get Methods
-    public int getAge() {
-        return this.age;
-    }
-
-    public String getName(){
-        return this.name;
-    }
-
-    public String getSurname(){
-        return this.surname;
-    }
-
-    public String getID(){
-        return this.ID;
-    }
-
+    public int getAge(){return this.age;}
+    public String getName(){return this.name;}
+    public String getSurname(){return this.surname;}
+    public String getID(){return this.ID;}
+    public boolean getAuthorisation(){return this.authorisation;}
 
     // Constructors
     public Person(String ID){
         this.ID = ID;
     }
-
     public Person(String ID, String name){
         this(ID);
         this.name = name;
     }
-    
     public Person(String ID, String name, String surname){
         this(ID, name);
         this.surname = surname;
