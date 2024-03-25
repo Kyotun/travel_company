@@ -235,6 +235,8 @@ public class Main {
                     Customer cst = customers.get(index);
                     cst.getPacket();
                 }
+            } else if (option == 100) {
+                System.out.println("See you later!");
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
