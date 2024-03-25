@@ -119,7 +119,27 @@ public class Main {
                 } else {
                     System.out.println(customers.get(index));
                 }
-            }
+
+            } else if (option == 7) {
+                System.out.println("Please enter the packet ID: ");
+                String pktid = sc.nextLine();
+
+                System.out.println("Please enter the destination: ");
+                String dest = sc.nextLine();
+
+                System.out.println("Please enter the date: ");
+                String date = sc.nextLine();
+
+                System.out.println("Please enter the duration: ");
+                int duration = sc.nextInt();
+
+                System.out.println("Please enter the price: ");
+                float price = sc.nextFloat();
+
+                TravelPacket travel_packet = new TravelPacket(pktid, dest, date, duration, price);
+                travel_packets.add(travel_packet);
+                System.out.println("Packet is added. There is " + travel_packets.size() + " packet in list.");
+            } 
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
             sc.nextLine();
