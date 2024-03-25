@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.regex.Pattern;
+
 public abstract class Person {
     // Object attributes
     private String name = "";
@@ -70,7 +72,7 @@ public abstract class Person {
                 && Character.isDigit(id.charAt(4)) && Character.isDigit(id.charAt(5)) && Character.isDigit(id.charAt(6)) && Character.isDigit(id.charAt(7)) &&
                 Character.isDigit(id.charAt(8)) && Character.isDigit(id.charAt(9)) && Character.isDigit(id.charAt(10));
     }
-    public static boolean checkName(String name){
+    public static boolean checkName(String name) throws NameFormatException{
         int l = name.length();
         if(l > 2){
             for(int i = 0; i < l; i++){
@@ -78,24 +80,21 @@ public abstract class Person {
                 if ( p == ' ' || p == '.' || (p <= 90 && p >= 65) || (p <= 122 && p >= 97) ){
                     continue;
                 } else {
-                    System.out.println("Please give just whitespaces and letters.");
-                    return false;
+                    throw new NameFormatException("Please give just whitespaces and letters.");
                 }
             }
             return true;
         } else{
-            System.out.println("Entry should be longer than 2 characters.");
-            return false;
+            throw new NameFormatException("Name should be longer than 2 characters.\"");
         }
     }
-    public static boolean checkSurname(String surname) {
+    public static boolean checkSurname(String surname) throws NameFormatException{
         if (surname.length() >= 2) {
             return true;
         } else {
             throw new NameFormatException("Surname should be longer than 2 characters.");
         }
     }
-
 
     // Overrides
     @Override
@@ -104,4 +103,15 @@ public abstract class Person {
         return getID().equals(p.getID());
     }
 
+    // Class method helper functions
+    public static boolean isLatinLetter(char c) {
+        return (c >= 65 && c <= 90) || (c >= 97 && c <= 122);
+    }
+    // Regex functions
+    public static boolean isNameValid(String in) {
+        return Pattern.matches("[a-zA-Z. ]{2,20}", in);
+    }
+    public static boolean isIDValid(String bg) {
+        return Pattern.matches("[1-9]{1}[0-9]{6}", bg);
+    }
 }
