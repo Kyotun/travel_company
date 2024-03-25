@@ -14,7 +14,7 @@ public abstract class Person {
         }
     }
     public void setSurname(String surname){
-        if(checkName(name)){
+        if(checkSurname(name)){
             this.surname = surname;
         }
     }
@@ -52,6 +52,14 @@ public abstract class Person {
     public Person(String ID, String name, String surname){
         this(ID, name);
         this.surname = surname;
+    }
+    public Person(String ID, String name, String surname, int age) {
+        this(ID, name, surname);
+        this.age = age;
+    }
+    public Person(String ID, String name, String surname, int age, boolean authorisation){
+        this(ID, name, surname, age);
+        this.authorisation = authorisation;
     }
 
     // Class methods
