@@ -11,6 +11,11 @@ public class Coworker extends Person{
         this.user_number= user_number;
     }
 
+    @Override
+    public String toString(){
+        return getUsernumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
+    }
+
     //Constructors
     public Coworker(String ID){
         super(ID);
