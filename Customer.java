@@ -2,10 +2,18 @@ public class Customer extends Person{
 
     private String customer_number = "";
 
+
     @Override
     public String toString(){
         return getCustomerNumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
     }
+
+    @Override
+    public boolean equals(Object obj){
+        Customer customer = (Customer) obj;
+        return getID().equals(customer.getID()) && getCustomerNumber().equals(customer.getCustomerNumber());
+    }
+
 
     //Set Methods
     public void setCustomerNumber(String customer_number){
