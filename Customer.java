@@ -1,10 +1,17 @@
 public class Customer extends Person{
+
     private String customer_number = "";
+
+    @Override
+    public String toString(){
+        return getCustomerNumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
+    }
 
     //Set Methods
     public void setCustomerNumber(String customer_number){
         this.customer_number = customer_number;
     }
+
     //Get Methods
     public String getCustomerNumber(){
         return customer_number;
