@@ -145,6 +145,25 @@ public class Main {
                     System.out.println(travelPacket);
                 }
                 System.out.println("There is no packet left to show.");
+            } else if (option == 8) {
+                for (TravelPacket travelPacket : travel_packets) {
+                    System.out.println(travelPacket);
+                }
+                System.out.println("There is no packet left to show.");
+
+            } else if (option == 9) {
+                System.out.println("Please enter the id: ");
+                String pktid = sc.nextLine();
+
+                TravelPacket travel_packet = new TravelPacket(pktid);
+
+                int index = travel_packets.indexOf(travel_packet);
+
+                if (index == -1) {
+                    System.out.println("Travel packet could not be found.");
+                } else {
+                    System.out.println(travel_packets.get(index));
+                }
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
