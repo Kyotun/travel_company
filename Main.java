@@ -1,5 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args) {
@@ -54,8 +55,24 @@ public class Main {
                         }
                     }
                 }
+            } else if (option == 2) {
+                for (Coworker coworker : coworkers) {
+                    System.out.println(coworker);
+                }
+                System.out.println("There is no person left to show.");
             }
-
+        } catch (InputMismatchException ime) {
+            System.out.println("Error:" + ime + ". Please give a number!");
+            sc.nextLine();
+        } catch (BadIDFormatException bid) {
+            System.out.println("Fail:" + bid);
+            sc.nextLine();
+        } catch (NameFormatException nfe) {
+            System.out.println("Fail:" + nfe);
+            sc.nextLine();
+        } catch (Exception excp) {
+            System.out.println("Fail:" + excp);
+            sc.nextLine();
 
         }
 
