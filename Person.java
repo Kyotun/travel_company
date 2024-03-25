@@ -66,7 +66,7 @@ public abstract class Person {
         if(idController(ID)){
             this.ID = ID;
         } else{
-            throw new BadIDFormat("ID cannot start with '0' and should contain 11 number.");
+            throw new BadIDFormatException("ID cannot start with '0' and should contain 11 number.");
         }
     }
 
