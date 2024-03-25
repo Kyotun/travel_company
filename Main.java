@@ -218,6 +218,23 @@ public class Main {
                 } else {
                     System.out.println("Customer could not be found.");
                 }
+            } else if (option == 13) {
+                System.out.println("Please give the personal ID: ");
+                String id = sc.nextLine();
+
+                System.out.println("Please enter the customer number: ");
+                String cn = sc.nextLine();
+
+                Customer customer = new Customer(id, cn);
+
+                int index = customers.indexOf(customer);
+
+                if (index == -1) {
+                    System.out.println("Customer could not be found.");
+                } else {
+                    Customer cst = customers.get(index);
+                    cst.getPacket();
+                }
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
