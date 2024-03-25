@@ -12,6 +12,13 @@ public class Person {
     }
 
     // Bool Methods
+
+    @Override
+    public boolean equals(Object obj){
+        Person p = (Person) obj;
+        return getID().equals(p.getID());
+    }
+
     public static boolean idController(String id){
         return id.charAt(0) != '0' && Character.isDigit(id.charAt(0)) && Character.isDigit(id.charAt(1)) && Character.isDigit(id.charAt(2)) && Character.isDigit(id.charAt(3))
                 && Character.isDigit(id.charAt(4)) && Character.isDigit(id.charAt(5)) && Character.isDigit(id.charAt(6)) && Character.isDigit(id.charAt(7)) &&
