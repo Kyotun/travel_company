@@ -139,7 +139,13 @@ public class Main {
                 TravelPacket travel_packet = new TravelPacket(pktid, dest, date, duration, price);
                 travel_packets.add(travel_packet);
                 System.out.println("Packet is added. There is " + travel_packets.size() + " packet in list.");
-            } 
+
+            } else if (option == 8) {
+                for (TravelPacket travelPacket : travel_packets) {
+                    System.out.println(travelPacket);
+                }
+                System.out.println("There is no packet left to show.");
+            }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
             sc.nextLine();
