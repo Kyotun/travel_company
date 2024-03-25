@@ -1,4 +1,5 @@
-public class Person {
+import java.util.ArrayList;
+public abstract class Person {
     private String name = "";
     private String surname = "";
     private String ID = "";
@@ -9,6 +10,10 @@ public class Person {
         System.out.println("Name: " + getName());
         System.out.println("Surname: " + getSurname());
         System.out.println("ID: " + getID());
+    }
+
+    public static void printSize(ArrayList<? extends Person> list){
+        System.out.println(list.size());
     }
 
     // Bool Methods
