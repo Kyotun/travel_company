@@ -61,9 +61,9 @@ public class Main {
                 }
                 System.out.println("There is no person left to show.");
             } else if (option == 3) {
-                System.out.println("Please give the id: ");
+                System.out.println("Please enter the id: ");
                 String bg = sc.nextLine();
-                System.out.println("Please give the coworker number: ");
+                System.out.println("Please enter the coworker number: ");
                 String mn = sc.nextLine();
 
                 Coworker cw = new Coworker(bg, mn);
@@ -75,7 +75,27 @@ public class Main {
                 } else {
                     System.out.println(coworkers.get(index));
                 }
+            } else if (option == 4) {
+                System.out.println("Please enter the id: ");
+                String id = sc.nextLine();
 
+                if (Person.isIDValid(id)) {
+                    System.out.println("Please enter the name: ");
+                    String nm = sc.nextLine();
+
+                    if (Person.checkName(nm)) {
+                        System.out.println("Please enter the surname:");
+                        String nn = sc.nextLine();
+
+                        if (Person.checkSurname(nn)) {
+                            Customer customer = new Customer(id, nm, nn, String.valueOf(customers.size()));
+                            System.out.println("Your customer number: C" + String.valueOf(customers.size()));
+                            customers.add(customer);
+                            System.out.println("Thank you for your time!");
+
+                        }
+                    }
+                }
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
