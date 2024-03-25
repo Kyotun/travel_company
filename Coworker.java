@@ -42,6 +42,6 @@ public class Coworker extends Person{
     }
     public Coworker(String ID, String name, String surname, String user_number){
         super(ID, name, surname);
-        this.user_number = "M" + user_number;
+        this.user_number = "W" + user_number;
     }
 }

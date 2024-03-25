@@ -31,6 +31,33 @@ public class Main {
             System.out.println("13- List all packets of a customer.");
             System.out.println("100- Exit.");
         }
+        try {
+            option = sc.nextInt(); sc.nextLine();
+
+            if (option == 1) {
+                System.out.println("Please enter the ID: ");
+                String id = sc.nextLine();
+
+                if (Person.isIDValid(id)) {
+                    System.out.println("Please enter the name: ");
+                    String nm = sc.nextLine();
+
+                    if (Person.checkName(nm)) {
+                        System.out.println("Please enter the surname:");
+                        String nn = sc.nextLine();
+
+                        if (Person.checkSurname(nn)) {
+                            Coworker cw = new Coworker(id, nm, nn, String.valueOf(coworkers.size()));
+                            System.out.println("Coworker number: W" + coworkers.size());
+                            coworkers.add(cw);
+                            System.out.println("Thank you for your time!");
+                        }
+                    }
+                }
+            }
+
+
+        }
 
     }
 }

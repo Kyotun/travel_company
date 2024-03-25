@@ -63,6 +63,6 @@ public class Customer extends Person {
 
     public Customer(String ID, String name, String surname, String customer_number) {
         super(ID, name, surname);
-        this.customer_number = "K" + customer_number;
+        this.customer_number = "C" + customer_number;
     }
 }
