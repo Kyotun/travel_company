@@ -1,7 +1,13 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+
+        ArrayList<Coworker> coworkers = new ArrayList<Coworker>();
+        ArrayList<Customer> customers = new ArrayList<Customer>();
+        ArrayList<TravelPacket> travel_packets = new ArrayList<TravelPacket>();
+
         Scanner sc = new Scanner(System.in);
         int option = 0;
 
@@ -20,6 +26,9 @@ public class Main {
             System.out.println("8- List all of the travel packets.");
             System.out.println("9- Search travel packet.");
             System.out.println("10- Change the price of a travel packet.");
+            System.out.println("11- Change coworker surname.");
+            System.out.println("12- Add packet to a customer.");
+            System.out.println("13- List all packets of a customer.");
             System.out.println("100- Exit.");
         }
 
