@@ -62,11 +62,11 @@ public abstract class Person {
                 && Character.isDigit(id.charAt(4)) && Character.isDigit(id.charAt(5)) && Character.isDigit(id.charAt(6)) && Character.isDigit(id.charAt(7)) &&
                 Character.isDigit(id.charAt(8)) && Character.isDigit(id.charAt(9)) && Character.isDigit(id.charAt(10));
     }
-    public static boolean checkName(String n){
-        int l = n.length();
+    public static boolean checkName(String name){
+        int l = name.length();
         if(l > 2){
             for(int i = 0; i < l; i++){
-                char p = n.charAt(i);
+                char p = name.charAt(i);
                 if ( p == ' ' || p == '.' || (p <= 90 && p >= 65) || (p <= 122 && p >= 97) ){
                     continue;
                 } else {
@@ -80,6 +80,14 @@ public abstract class Person {
             return false;
         }
     }
+    public static boolean checkSurname(String surname) {
+        if (surname.length() >= 2) {
+            return true;
+        } else {
+            throw new NameFormatException("Surname should be longer than 2 characters.");
+        }
+    }
+
 
     // Overrides
     @Override
