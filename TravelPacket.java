@@ -20,6 +20,21 @@ public class TravelPacket {
     public int getDuration(){return this.duration;}
     public float getPrice(){return this.price;}
 
+    // Overrides
+    @Override
+    public String toString() {
+        return "ID: " + getPacketID() + ", Destination: " +
+                getDestination() + ", Datum: " +
+                getDatum() + ", Dauer: " +
+                getDuration() + ", Preis: " + getPrice();
+    }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof TravelPacket travel_packet){
+            return getPacketID().equals(travel_packet.getPacketID());
+        } return false;
+    }
+
     // Constructors
     public TravelPacket(String packetID){
         this.packetID= packetID;
