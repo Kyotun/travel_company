@@ -18,6 +18,25 @@ public class Person {
                 Character.isDigit(id.charAt(8)) && Character.isDigit(id.charAt(9)) && Character.isDigit(id.charAt(10));
     }
 
+    public static boolean nameController(String n){
+        int l = n.length();
+        if(l > 2){
+            for(int i = 0; i < l; i++){
+                char p = n.charAt(i);
+                if ( p == ' ' || p == '.' || (p <= 90 && p >= 65) || (p <= 122 && p >= 97) ){
+                    continue;
+                } else {
+                    System.out.println("Name can contain just whitespace and letters.");
+                    return false;
+                }
+            }
+            return true;
+        } else{
+            System.out.println("Name should be longer than 2 characters.");
+            return false;
+        }
+    }
+
     //Set Methods
     public void setName(String name){
         this.name = name;
