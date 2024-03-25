@@ -19,4 +19,16 @@ public class TravelPacket {
     public String getDatum(){return this.date;}
     public int getDuration(){return this.duration;}
     public float getPrice(){return this.price;}
+
+    // Constructors
+    public TravelPacket(String packetID){
+        this.packetID= packetID;
+    }
+    public TravelPacket(String packetID, String destination, String date, int duration, float price){
+        this(packetID);
+        this.destination = destination;
+        this.date = date;
+        this.duration = duration;
+        this.price = price;
+    }
 }
