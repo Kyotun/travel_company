@@ -178,6 +178,22 @@ public class Main {
                     System.out.println("Price is changed.");
                 }
 
+            } else if (option == 11) {
+                System.out.println("Please enter the personal id: ");
+                String id = sc.nextLine();
+                System.out.println("Please enter the coworker number: ");
+                String wn = sc.nextLine();
+                Coworker coworker = new Coworker(id, wn);
+
+                if (coworkers.contains(coworker)) {
+                    int index = coworkers.indexOf(coworker);
+                    Coworker coworker2 = coworkers.get(index);
+                    System.out.println("Please give the new name: ");
+                    String nn = sc.nextLine();
+                    coworker2.setSurname(nn);
+                } else {
+                    System.out.println("Coworker could not be found.");
+                }
             }
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
