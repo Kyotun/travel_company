@@ -1,15 +1,26 @@
+import java.util.ArrayList;
+
 public class Customer extends Person {
 
     private String customer_number = "";
+    private ArrayList<TravelPacket> customer_packets = new ArrayList<TravelPacket>();
 
     //Set Methods
     public void setCustomerNumber(String customer_number) {
         this.customer_number = customer_number;
     }
+    public void addPacket(TravelPacket paket){
+        customer_packets.add(paket);
+    }
 
     //Get Methods
     public String getCustomerNumber() {
         return customer_number;
+    }
+    public void getPacket(){
+        for (TravelPacket customerPacket : customer_packets) {
+            System.out.println(customerPacket);
+        }
     }
 
     // Void Methods
