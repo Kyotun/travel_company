@@ -60,6 +60,7 @@ public class Main {
                     System.out.println(coworker);
                 }
                 System.out.println("There is no person left to show.");
+
             } else if (option == 3) {
                 System.out.println("Please enter the id: ");
                 String bg = sc.nextLine();
@@ -75,6 +76,7 @@ public class Main {
                 } else {
                     System.out.println(coworkers.get(index));
                 }
+
             } else if (option == 4) {
                 System.out.println("Please enter the id: ");
                 String id = sc.nextLine();
@@ -96,7 +98,12 @@ public class Main {
                         }
                     }
                 }
-            }
+            } else if (option == 5) {
+                for (Customer customer : customers) {
+                    System.out.println(customer);
+                }
+                System.out.println("There is no person left to show.");
+            } 
         } catch (InputMismatchException ime) {
             System.out.println("Error:" + ime + ". Please give a number!");
             sc.nextLine();
