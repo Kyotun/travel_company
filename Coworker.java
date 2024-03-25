@@ -2,24 +2,24 @@ public class Coworker extends Person{
     private String user_number= "";
 
     //Get Methods
-    public String getUsernumber(){
+    public String getUserNumber(){
         return this.user_number;
     }
 
     //Set Methods
-    public void setUsernumber(String user_number){
+    public void setUserNumber(String user_number){
         this.user_number= user_number;
     }
 
     @Override
     public String toString(){
-        return getUsernumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
+        return getUserNumber() + ": " + "ID: " + getID() + ", Name: " + getName() + ", Surname: " + getSurname();
     }
 
     @Override
     public boolean equals(Object obj){
         Coworker coworker = (Coworker) obj;
-        return getID().equals(coworker.getID()) && getUsernumber().equals(coworker.getUsernumber());
+        return getID().equals(coworker.getID()) && getUserNumber().equals(coworker.getUserNumber());
     }
 
     //Constructors
