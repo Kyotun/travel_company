@@ -54,7 +54,7 @@ public class Person {
         if(idController(ID)){this.ID = ID;}
     }
 
-    public void setAlter(int age){
+    public void setAge(int age){
         this.age = age;
     }
 
