@@ -11,6 +11,13 @@ public class Person {
         System.out.println("ID: " + getID());
     }
 
+    // Bool Methods
+    public static boolean idController(String id){
+        return id.charAt(0) != '0' && Character.isDigit(id.charAt(0)) && Character.isDigit(id.charAt(1)) && Character.isDigit(id.charAt(2)) && Character.isDigit(id.charAt(3))
+                && Character.isDigit(id.charAt(4)) && Character.isDigit(id.charAt(5)) && Character.isDigit(id.charAt(6)) && Character.isDigit(id.charAt(7)) &&
+                Character.isDigit(id.charAt(8)) && Character.isDigit(id.charAt(9)) && Character.isDigit(id.charAt(10));
+    }
+
     //Set Methods
     public void setName(String name){
         this.name = name;
