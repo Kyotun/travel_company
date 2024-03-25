@@ -99,8 +99,11 @@ public abstract class Person {
     // Overrides
     @Override
     public boolean equals(Object obj){
-        Person p = (Person) obj;
-        return getID().equals(p.getID());
+        if(obj instanceof Person) {
+            Person p = (Person) obj;
+            return getID().equals(p.getID());
+        }
+        return false;
     }
 
     // Class method helper functions
