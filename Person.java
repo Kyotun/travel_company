@@ -63,7 +63,11 @@ public abstract class Person {
     }
 
     public void setID(String ID) {
-        if(idController(ID)){this.ID = ID;}
+        if(idController(ID)){
+            this.ID = ID;
+        } else{
+            throw new BadIDFormat("ID cannot start with '0' and should contain 11 number.");
+        }
     }
 
     public void setAge(int age){
