@@ -4,6 +4,13 @@ public class Person {
     private String ID = "";
     private int age = 0;
 
+    // Void Methods
+    public void printInfo(){
+        System.out.println("Name: " + getName());
+        System.out.println("Surname: " + getSurname());
+        System.out.println("ID: " + getID());
+    }
+
     //Set Methods
     public void setName(String name){
         this.name = name;
